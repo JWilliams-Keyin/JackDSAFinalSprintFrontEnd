@@ -23,7 +23,7 @@ function PreviousTreesTable() {
                         <h3 className = 'jsonTableHead'>Tree {item.id}</h3>
 
                         <div className = 'jsonTableBody'>
-                            <h3>Airline: {item.treeJson}</h3>
+                            <h3>{item.treeJson}</h3>
                         </div>
                     </li>
                 ))}
