@@ -18,12 +18,12 @@ function PreviousTreesTable() {
     return(
         <div>
             <ul className = 'jsonTable'>
-                {flight.map(item => (
+                {tree.map(item => (
                     <li key = {item.id}>
                         <h3 className = 'jsonTableHead'>Tree {item.id}</h3>
 
                         <div className = 'jsonTableBody'>
-                            <h3>{item.treeJson}</h3>
+                            <p>{item.treeJson}</p>
                         </div>
                     </li>
                 ))}
