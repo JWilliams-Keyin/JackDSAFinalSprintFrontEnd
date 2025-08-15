@@ -77,6 +77,40 @@
   width: 49vw;
 }
 
+.createTable {
+  display: grid;
+  place-items: center;
+  list-style-type: none;
+}
+
+.createTableHead {
+  background-color: maroon;
+  border: 2px solid;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px 0px 10px 0px;
+  width: 50vw;
+  margin: 15vh 0 0 0;
+}
+
+.createTableBody {
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: 25vw 20vw;
+  align-items: center;
+  text-align: left;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px 0px 10px 1vw;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 5px;
+  width: 49vw;
+  margin-bottom: 15vh;
+}
+
 .submitButton {
   grid-column: 1 / -1;
   justify-self: center;
