@@ -12,7 +12,7 @@ function NavBar() {
 
             <div className='navRight'>
                 <h2>
-                    <Link className = 'links' to = 'previous'>Previous Trees</Link>
+                    <Link className = 'links' to = 'previous'>Trees</Link>
                 </h2>
             </div>
             

@@ -4,30 +4,24 @@ import '../App.css';
 
 function CreateTreeTable() {
     const [numbers, setNumbers] = useState([]);
-    const [tree, setTree] = useState([]);
-
-    useEffect(() => {
-        axios
-        .get(`http://localhost:8080/tree_search?tree_numbers=${"[" + numbers + "]"}`)
-        .then(response => {
-            setTree(response.data);
-        })
-        .catch(error => {
-            console.error('Error fetching tree data', error);
-        });
-    }, []);
-
+    
     const handleSubmit = async (event) => {
-        const newTree = {numbers};
+        event.preventDefault();
+        const numberArray = numbers
+            .split(',')
+            .map(num => parseInt(num.trim(), 10));
 
-        try {
-            const response = await axios
-            .post('http://localhost:8080/process-numbers', newTree);
-            alert("Tree successfully created!");
-        } catch (error) {
-            console.error("Error creating tree", error);
-            alert("Error creating tree!");
-        }
+    try {
+        await axios.post(
+            'http://localhost:8080/process-numbers',
+            numberArray,
+            { headers: { 'Content-Type': 'application/json' } }
+        );
+        alert("Tree successfully created!");
+    } catch (error) {
+        console.error("Error creating tree", error);
+        alert("Error creating tree!");
+    }
     };
 
     return(
@@ -41,18 +35,10 @@ function CreateTreeTable() {
                     {numbers} onChange = {(event) =>
                     setNumbers(event.target.value)}>
                     </input>
+
+                    <button type = 'submit' className = 'submitButton'>Create Tree</button>
                 </div>
             </form>
-
-            <ul className = 'jsonTable'>
-                {tree.map(item => {
-                    <li key = {item.id}>
-                        <h2 className = 'jsonTableHead'>Your Tree</h2>
-
-                        <h3 className = 'jsonTableBody'>{item.treeJson}</h3>
-                    </li>
-                })}
-            </ul>
         </>
     )
 }

@@ -3,7 +3,7 @@ import '../App.css';
 function Header() {
     return(
         <div className = 'header'>
-            <h1>✈️ &nbsp; Flight Tracker &nbsp; ✈️</h1>
+            <h1>Tree Creator</h1>
         </div>
     )
 }
